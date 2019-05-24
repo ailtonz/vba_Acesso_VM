@@ -34,7 +34,6 @@ Property Let strRun(pValue As String):                     sRun = pValue:       
 '' https://docs.microsoft.com/pt-br/windows-server/administration/windows-commands/mstsc
 '' https://docs.microsoft.com/pt-br/windows-server/administration/windows-commands/remote-desktop-services-terminal-services-command-reference
 
-
 Function gerarCredencial()
 Dim col As New Collection
 
@@ -54,7 +53,7 @@ Saida strPath, strAddress & ".bat", "TIMEOUT 3"
 Saida strPath, strAddress & ".bat", "DEL /Q /F " & strPath & "\" & strAddress & ".bat"
 
 '' Pause
-Sleep 500
+'Sleep 500
 
 '' Auto run
 Shell strPath & "\" & strAddress & ".bat"
@@ -63,7 +62,7 @@ Shell strPath & "\" & strAddress & ".bat"
 Sleep 500
 
 '' Execução
-If (strRun <> "") Then Shell "mstsc " & strPath & "\" & strAddress & ".rdp"
+Shell "mstsc " & strPath & "\" & strAddress & ".rdp"
 
 End Function
 
@@ -141,3 +140,58 @@ Private Function Saida(strCaminho As String, strArquivo As String, strConteudo A
     Print #1, strConteudo
     Close #1
 End Function
+
+
+''[rdp]
+
+'colNews.Add "screen mode id:i:2"
+'colNews.Add "use multimon:i:0"
+'colNews.Add "desktopwidth:i:1920"
+'colNews.Add "desktopheight:i:1080"
+'colNews.Add "session bpp:i:32"
+'colNews.Add "winposstr:s:0,3,0,0,800,600"
+'colNews.Add "compression:i:1"
+'colNews.Add "keyboardhook:i:2"
+'colNews.Add "audiocapturemode:i:0"
+'colNews.Add "videoplaybackmode:i:1"
+'colNews.Add "connection type:i:7"
+'colNews.Add "networkautodetect:i:1"
+'colNews.Add "bandwidthautodetect:i:1"
+'colNews.Add "displayconnectionbar:i:1"
+'colNews.Add "enableworkspacereconnect:i:0"
+'colNews.Add "disable wallpaper:i:0"
+'colNews.Add "allow font smoothing:i:0"
+'colNews.Add "allow desktop composition:i:0"
+'colNews.Add "disable full window drag:i:1"
+'colNews.Add "disable menu anims:i:1"
+'colNews.Add "disable themes:i:0"
+'colNews.Add "disable cursor setting:i:0"
+'colNews.Add "bitmapcachepersistenable:i:1"
+'colNews.Add "Full Address: s: DVMSPROBO07"
+'colNews.Add "audiomode:i:0"
+'colNews.Add "redirectprinters:i:1"
+'colNews.Add "redirectcomports:i:0"
+'colNews.Add "redirectsmartcards:i:1"
+'colNews.Add "redirectclipboard:i:1"
+'colNews.Add "redirectposdevices:i:0"
+'colNews.Add "autoreconnection enabled:i:1"
+'colNews.Add "authentication level:i:2"
+'colNews.Add "prompt for credentials:i:0"
+'colNews.Add "negotiate security layer:i:1"
+'colNews.Add "remoteapplicationmode:i:0"
+'colNews.Add "alternate Shell: s:"
+'colNews.Add "shell working directory:s:"
+'colNews.Add "gatewayhostname: s:"
+'colNews.Add "gatewayusagemethod:i:4"
+'colNews.Add "gatewaycredentialssource:i:4"
+'colNews.Add "gatewayprofileusagemethod:i:0"
+'colNews.Add "promptcredentialonce:i:0"
+'colNews.Add "gatewaybrokeringtype:i:0"
+'colNews.Add "use redirection server name:i:0"
+'colNews.Add "rdgiskdcproxy:i:0"
+'colNews.Add "kdcproxyname: s:"
+'colNews.Add "smart sizing:i:1"
+'colNews.Add "username:s:BSBR\SPROBO87"
+
+
+
